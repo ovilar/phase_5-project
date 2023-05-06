@@ -25,6 +25,9 @@ The dataset used is a collection of hourly load usage across the NYISO. To simpl
 focus only on the NYC Zone (NYISO Zone J). The data spans from 2018 through 2020. I also provide 
 weather statistics and feature engineering.
 
+<img src='https://github.com/ovilar/phase_5-project/blob/main/img/nyc_hourly_load.png' alt='Hourly Load in NYC and CTHI 
+statistic'>
+
 ## Time Series Workflow
 
 ### SARIMAX
