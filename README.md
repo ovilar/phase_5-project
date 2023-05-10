@@ -1,4 +1,7 @@
 # Time Series Forecasting: NYISO Hourly Load
+Name: Orlando Vilar
+Date: 5/1/2023
+
 In this project, I work with data collected from the New York Independent 
 System Operator 
 (NYISO). The dataset hourly load estimates for all of the New York Zones 
@@ -22,8 +25,10 @@ three modeling frameworks that aim to reduce forecasting deviations.
 
 ## Data and Analysis
 The dataset used is a collection of hourly load usage across the NYISO. To simplify our analysis, I 
-focus only on the NYC Zone (NYISO Zone J). The data spans from 2018 through 2020. I also provide 
-weather statistics and feature engineering.
+focus only on the NYC Zone (NYISO Zone J). The data spans from 2018 through 2020, and has more than 
+300,000 hourly load observations. The variables are Load, Region, Holiday, Peak and Off-peak.I also provide 
+weather statistics, such as Cumulative Temperature and Humidity Index, CDD and HDD, feature engineering and 
+a fully saturated dummy set.
 
 <img src='https://github.com/ovilar/phase_5-project/blob/main/img/nyc_hourly_load.png' alt='Hourly Load in NYC and CTHI 
 statistic'>
@@ -40,12 +45,15 @@ alternatives.
 ### LSTM
 Next, I provide two Long Short-Term Memory Neural Network models. Both the simple and the more structure models provide good 
 Mean Absolute Percent Errors and allow for hyperparameter tuning. However, while achieving interesting results, the models 
-fail to capture the troughs in the data.
+fail to capture the troughs in the data. The simple LSTM model has a MAPE of close to 10.4%, whereas the 
+Deeper LSTM has a MAPE of 10.5%.
 
 ### The Prophet
 Lastly, I run two Prophet settings: a plain vanilla one and another with exogenous features. Even though the general load 
 pattern resembles the overall data look, the model fails to capture the data peaks. However, it captures the seasonality 
-aspects from the data accurately and it might be a good alternative for trough modeling.
+aspects from the data accurately and it might be a good alternative for trough modeling. The overall MAPES 
+are around 30-40% for the full period, however the load forecast starts to widen its interval as periods go 
+by.
 
 
 ## Conclusion
@@ -68,7 +76,8 @@ Furthermore computational limitations also impede further and a thorough assessm
 Here you will find:
 
 <ul>
-<li>Presentation file;</li>
+<li><a href='https://github.com/ovilar/phase_5-project/blob/main/presentation.pdf' 
+alt='Presentation'>Presentation file</a>;</li>
 <li>Jupyter Notebook;</li>
 <li>README.md file;</li>
 <li>Image Folder;</li>
